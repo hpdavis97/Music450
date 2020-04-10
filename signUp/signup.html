@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+  <title>Sign-Up</title>
+  <head>
+    <link rel="stylesheet" type="text/css" href="signUp.css">
+    <script src="signUp.js"></script>
+  </head>
+  <body>
+    <script src="../header/header.js"></script>
+    <div class="flex">
+      <div id="signUpContainer" class="container">
+        <h1>Create Your Account</h1>
+        <hr id="signUpUnderline"/>
+        <!--- <form action="create_New_Reviewer.php" method="get"> -->
+        <p id="signUp">
+          <br>
+          <br>
+          <input id="fName" type="text" placeholder="First Name"name="userFName" onchange="checkFName()" required>
+          <input id="lName" type="text" placeholder="Last Name" name="userLName" onchange="checkLName()" required>
+          <br>
+          <br>
+          <input id="email" type="text" placeholder="Email" name="userEmail" onkeyup="noSpace('email');" onchange="checkEmail()" required>
+        </p>
+          <text id="invalidEmail" hidden=true>Email is invalid.</text>
+          <br>
+          <br>
+          <br>
+          <br>
+          <text id='birthdate'>Birthdate</text>
+        <p id="bday">
+          <input id="monthDOB" type="text" placeholder="Month" name='monthDOB'onkeyup="noSpace('monthDOB');" onchange="checkMonth()" required>
+          <input id="dayDOB" type="text" placeholder="Day" name='dayDOB'onkeyup="noSpace('dayDOB');" onchange="checkDay()" required>
+          <input id="yearDOB" type="text" placeholder="Year" name='yearDOB'onkeyup="noSpace('yearDOB');" onchange="checkYear()" required>
+        </p>
+          <text id="invalidDOB" hidden=true>DOB is invalid.</text>
+          <br>
+          <br>
+        <p id="loginInfo">
+          <input id="userName" type="text" placeholder="Username" name="userName" onchange="checkUsername()" required>
+          <br>
+          <br>
+          <input id="password1" type="password" placeholder="Password" name="password" onkeyup="passwordChecking()" required>
+          <br>
+          <br>
+          <input id="password2" type="password" placeholder="Verify Password" name="verifyPassword" onkeyup="passwordChecking()" required>
+        </p>
+          <text id="notVerified" hidden=true>Your password cannot have spaces.</text>
+          <br>
+          <br>
+        <p id="button">
+          <button id="createButton" type="submit" name="accountCreateButton" disabled=true>Create Account</button>
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- </form> -->
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="../footer/footer.js"></script>
+  </footer>
+</html>

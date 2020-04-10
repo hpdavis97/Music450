@@ -1,0 +1,88 @@
+body {
+  background-color: #F4F4EE;
+  padding-bottom: 100px;
+}
+
+h1 {
+  color: #F4F4EE;
+  text-align: center;
+}
+
+input {
+  color: black;
+  background-color: #F4F4EE;
+  border: 5px solid #F4F4EE;
+  border-radius: 10px;
+  height: 40px;
+  width: 250px;
+  padding: 5px;
+  box-shadow: 1px 1px 3px #333333;
+}
+
+#loginHeading {
+  text-align: center;
+  position: relative;
+  padding-top: 8%;
+  font-size: 40px;
+  color: #FAE117;
+}
+
+#loginUnderline {
+  width: 300px;
+  size: 50px;
+}
+
+#loginInfo {
+  text-align: center;
+  position: relative;
+}
+
+#loginLinks {
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+  padding-bottom: 8%;
+  color: white;
+}
+
+#signUpLink {
+  color: #FAE117;
+}
+
+#resetPasswordLink {
+  color: #FAE117;
+}
+
+#button {
+  text-align: center;
+}
+
+#loginButton {
+  width: 120px;
+  height: 50px;
+  background-color: #FAE117;
+  color: #333333;
+  border: 5px solid #FAE117;
+  border-radius: 10px;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#loginContainer {
+  background-color: #121212;
+  width: 500px;
+  height: 600px;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px #333333;
+}
+
+#backgroundImage {
+  background-size: 100%;
+}

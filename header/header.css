@@ -1,0 +1,122 @@
+/*
+ * Made by Erik Terwan
+ * 24th of November 2015
+ * MIT License
+ *
+ *
+ * If you are thinking of using this in
+ * production code, beware of the browser
+ * prefixes.
+ */
+
+body
+{
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+/* Style the navigation menu */
+.topnav {
+  order: 3;
+  position: relative;
+  top: 0%;
+}
+
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
+  position: relative;
+  background-color: grey;
+  top: 0px;
+  right: 20px;
+  padding: 10px;
+}
+
+/* Style navigation menu links */
+.topnav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  font-size: 17px;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: black;
+  position: relative;
+  visibility: hidden;
+  top: 5%;
+  right: 20px;
+}
+
+/* Add a grey background color on mouse-over */
+.topnav a:hover {
+  background-color: #FAE117;
+  color: black;
+}
+
+.topnav #headerDropDown {
+  position: relative;
+  visibility: hidden;
+  top: 5%;
+}
+
+#headerUsername {
+  padding-right: 20px;
+  visibility: hidden;
+}
+
+#searchWrapper {
+  order: 1;
+  position: relative;
+  top: 5%;
+  text-align: left;
+}
+
+#logoWrapper {
+  order: 2;
+  position: relative;
+  text-align: center;
+  top: 5%;
+}
+
+#logo {
+  position: relative;
+  left: 10%;
+  width: 50px;
+  height: 50px;
+}
+
+#header {
+  display: flex;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #121212;
+  height: 40px;
+}
+
+#search {
+  position: relative;
+  width: 130px;
+  height: 30px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #F4F4EE;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 10px 12px 20px;
+}
+
+#loginLinkWrapper {
+  position: absolute;
+  top: 0px;
+}

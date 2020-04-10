@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <title>Login</title>
+  <head>
+    <link rel="stylesheet" type="text/css" href="login.css">
+    <script src="../header/header.js"></script>
+  </head>
+  <body>
+    <div class="flex">
+      <div id="loginContainer">
+        <div id="loginHeading">
+          <p>
+          Login
+          <hr id="loginUnderline"/>
+          </p>
+        </div>
+        <p id="loginInfo">
+          <input id="username" type="text" placeholder="Username" name="userName" onchange="checkUsername()" required>
+          <br>
+          <br>
+          <input id="password" type="password" placeholder="Password" name="password" onkeyup="passwordChecking()" required>
+          <br>
+          <br>
+        </p>
+          <p id="notVerified" hidden=true>Your password cannot have spaces.</p>
+        <p id="button">
+          <button id="loginButton" type="submit" name="accountLoginButton" disabled=true>Login</button>
+        </p>
+        <div id="loginLinks">
+          <p>
+            Don't have an account?
+            <a id="signUpLink" href="../signUp/signup.html">SignUp</a>
+          </p>
+        <!--  <p>
+            Forgot Password?
+            <a id="resetPasswordLink" href="signup.html">Reset Password</a>
+          </p> -->
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="../footer/footer.js"></script>
+  </footer>
+</html>
