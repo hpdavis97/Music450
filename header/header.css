@@ -1,13 +1,4 @@
-/*
- * Made by Erik Terwan
- * 24th of November 2015
- * MIT License
- *
- *
- * If you are thinking of using this in
- * production code, beware of the browser
- * prefixes.
- */
+
 
 body
 {
@@ -20,7 +11,9 @@ body
 .topnav {
   order: 3;
   position: relative;
-  top: 0%;
+  text-align: right;
+  top: 5%;
+  width: 25%;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
@@ -28,9 +21,10 @@ body
   display: none;
   position: relative;
   background-color: grey;
-  top: 0px;
-  right: 20px;
+  top: 30px;
+  right: -50%;
   padding: 10px;
+  width: 40%;
 }
 
 /* Style navigation menu links */
@@ -39,35 +33,29 @@ body
   padding: 14px 16px;
   text-decoration: none;
   position: relative;
-  display: block;
   overflow: hidden;
   font-size: 17px;
 }
 
-/* Style the hamburger menu */
-.topnav a.icon {
-  background: black;
-  position: relative;
-  visibility: hidden;
-  top: 5%;
-  right: 20px;
+.topnav a:hover {
+  background-color: #FAE117 !important;
+  color: black !important;
 }
 
-/* Add a grey background color on mouse-over */
-.topnav a:hover {
-  background-color: #FAE117;
-  color: black;
+.topnav a:hover #headerUsername{
+  color: black !important;
 }
 
 .topnav #headerDropDown {
+  background: #121212;
   position: relative;
-  visibility: hidden;
-  top: 5%;
+  top: 10px;
+  right: 20px;
 }
 
 #headerUsername {
   padding-right: 20px;
-  visibility: hidden;
+  color: white;
 }
 
 #searchWrapper {
@@ -75,6 +63,7 @@ body
   position: relative;
   top: 5%;
   text-align: left;
+  width: 25%
 }
 
 #logoWrapper {
@@ -82,11 +71,11 @@ body
   position: relative;
   text-align: center;
   top: 5%;
+  width: 50%;
 }
 
 #logo {
   position: relative;
-  left: 10%;
   width: 50px;
   height: 50px;
 }
@@ -117,6 +106,7 @@ body
 }
 
 #loginLinkWrapper {
-  position: absolute;
-  top: 0px;
+  position: relative;
+  top: -10px;
+  z-index: 2;
 }

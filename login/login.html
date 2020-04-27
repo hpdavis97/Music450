@@ -6,6 +6,7 @@
     <script src="../header/header.js"></script>
   </head>
   <body>
+    <script src="../signUp/signUp.js"></script>
     <div class="flex">
       <div id="loginContainer">
         <div id="loginHeading">
@@ -14,18 +15,20 @@
           <hr id="loginUnderline"/>
           </p>
         </div>
-        <p id="loginInfo">
-          <input id="username" type="text" placeholder="Username" name="userName" onchange="checkUsername()" required>
-          <br>
-          <br>
-          <input id="password" type="password" placeholder="Password" name="password" onkeyup="passwordChecking()" required>
-          <br>
-          <br>
-        </p>
-          <p id="notVerified" hidden=true>Your password cannot have spaces.</p>
-        <p id="button">
-          <button id="loginButton" type="submit" name="accountLoginButton" disabled=true>Login</button>
-        </p>
+        <form action = "../login/login.php" method="post">
+          <p id="loginInfo">
+            <input id="username" type="text" placeholder="Username" name="userName" onchange="checkUsername()" required>
+            <br>
+            <br>
+            <input id="password" type="password" placeholder="Password" name="password" onkeyup="passwordChecking()" required>
+            <br>
+            <br>
+          </p>
+            <p id="notVerified" hidden=true>Your password cannot have spaces.</p>
+          <p id="button">
+            <button id="loginButton" type="submit" name="accountLoginButton">Login</button>
+          </p>
+      </form>
         <div id="loginLinks">
           <p>
             Don't have an account?
