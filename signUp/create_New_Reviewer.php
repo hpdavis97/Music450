@@ -36,15 +36,3 @@
 	}
 
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>LG Co</title>
-	<meta charset ="utf-8">
-</head>
-<body>
-	<h2>Reviewer <?php echo "$first $last";?> was successfully added</h2>
-	<h3><a href="createReviewer.html">Add another reviewer</a><h3>
-	<h3><a href="index.html">Back to Home</a></h3>
-</body>
-</html>
