@@ -1,0 +1,45 @@
+
+<!-- // Alex Bolsoy
+// Music450 -->
+
+<!doctype html>
+<html>
+  <title>Create Review</title>
+  <head>
+    <link rel="stylesheet" type="text/css" href="createReview.css">
+    <script src="createReview.js"></script>
+    <script src="../header/header.js"></script>
+  </head>
+  <body>
+    <div class="flex">
+      <div id="signUpContainer" class="container">
+        <h1>Create Your Review</h1>
+        <hr id="signUpUnderline"/>
+        <form action="createReview.php" method="get">
+        <p id="signUp">
+          <br>
+          <br>
+          <input id="songName" type="text" placeholder="Song Name"name="songName" onchange="checkSongName()" required>
+          <input id="songRating" type="text" placeholder="Song Rating (0-10)" name="songRating" onchange="checkSongRating()" required>
+          <br>
+          <br>
+          <input id="songComments" type="text" placeholder="Comments" name="songComments" onchange="checkSongComments()" required>
+        </p>
+          <text id="invalidRating" hidden=true>Rating is invalid. Must be 0-10.</text>
+          <br>
+          <text id="invalidSong" hidden=true>Song is not in database. Double check spelling or add song.</text>
+          <br>
+          <br>
+          <br>
+          <br>
+        <p id="button">
+          <button id="createButton" type="submit" name="reviewCreateButton" disabled=true>Create Review</button>
+        </p>
+        </form>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <script src="../footer/footer.js"></script>
+  </footer>
+</html>
