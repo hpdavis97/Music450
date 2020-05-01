@@ -1,40 +1,43 @@
 
 <!-- // Alex Bolsoy
 // Music450 -->
-
 <!doctype html>
 <html>
-  <title>Create Review</title>
+  <title>Add Song</title>
   <head>
-    <link rel="stylesheet" type="text/css" href="../review/createReview.css">
-    <script src="../review/createReview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../review/addSong.css">
+    <script src="../review/addSong.js"></script>
     <script src="../header/header.js"></script>
   </head>
   <body>
     <div class="flex">
       <div id="signUpContainer" class="container">
-        <h1>Create Your Review</h1>
+        <h1>Add Song</h1>
         <hr id="signUpUnderline"/>
-        <form action="../review/createReview.php" method="get">
+        <form action="../review/addSong.php" method="get">
         <p id="signUp">
           <br>
           <br>
           <input id="songName" type="text" placeholder="Song Name"name="songName" onchange="checkSongName()" required>
-          <input id="songRating" type="text" placeholder="Song Rating (0-10)" name="songRating" onchange="checkSongRating()" required>
+          <input id="artistName" type="text" placeholder="Artist Name" name="artistName" onchange="checkArtistName()" required>
           <br>
           <br>
-          <input id="songComments" type="text" placeholder="Comments" name="songComments" onchange="checkSongComments()" required>
+          <input id="albumName" type="text" placeholder="Album Name" name="albumName" onchange="checkAlbumName()" required>
         </p>
           <text id="invalidRating" hidden=true>Rating is invalid. Must be 0-10.</text>
           <br>
-          <text id="invalidSong" hidden=true>Song is not in database. Double check spelling or add song.</text>
+          <text id="invalidSong" hidden=true>Must enter song name. </text>
           <br>
           <br>
           <br>
           <br>
         <p id="button">
-          <button id="createButton" type="submit" name="reviewCreateButton" disabled=true>Create Review</button>
+          <button id="addButton" type="submit" name="addButton" disabled=true>Add Song</button>
         </p>
+        <!-- <br>
+        <br>
+        <br>
+        <br> -->
         </form>
       </div>
     </div>

@@ -1,3 +1,7 @@
+
+<!-- // Alex Bolsoy
+// Music450 -->
+
 <?php
 session_start();
  ?>
@@ -5,17 +9,11 @@ session_start();
 // $_SESSION['review_id'] = 60007;
 /*This code assumes user input is valid and correct only for demo purposes - it does NOT validate form data.*/
 	if(true) { // !empty($_GET['review_id'])) { //must have at least a last name not = NULL
-		// $song = 30001; //$_GET['songName'];
-		$reviewID = $_SESSION['review_id']; // $_GET['songName'];
-		require_once('../../mysqli_config.php'); //adjust the relative path as necessary to find your config file
-		//Retrieve largest cust_id
-		// CHECK IF THE SONG EXISTS AND CHECK IF THE USER HAS ALREADY REVIEWED THIS SONG
-		// capitalization of the song name
+    // If the form is blank, it is because it is not getting a review_id
+    $reviewID = $_SESSION['review_id']; // $_GET['songName'];
+		require_once('../../config.php'); //adjust the relative path as necessary to find your config file
 
-    // Calculation - average rating of an album
-
-    // keep track of current user id and current review id
-
+    // Get song review info from database
 		$query = "SELECT * FROM SONG_REVIEW WHERE review_id = ?";
     $stmt = mysqli_prepare($dbc, $query);
     mysqli_stmt_bind_param($stmt, "s", $reviewID);
@@ -28,8 +26,7 @@ session_start();
     $songId = $reviewInfo['song_id'];
     $userId = $reviewInfo['account_id'];
 
-    echo $songId;
-
+    // Get song info from database
     $query2 = "SELECT * FROM SONG WHERE song_id = ?";
     $stmt2 = mysqli_prepare($dbc, $query2);
     mysqli_stmt_bind_param($stmt2, "s", $songId);
@@ -39,10 +36,7 @@ session_start();
     $songName = $songInfo['song_name'];
     $artistId = $songInfo['artist_id'];
 
-    echo $songName;
-    echo $reviewComments;
-    echo $artistId;
-
+    // Get artist info from database
     $query3 = "SELECT * FROM ARTIST WHERE artist_id = ?";
     $stmt3 = mysqli_prepare($dbc, $query3);
     mysqli_stmt_bind_param($stmt3, "s", $artistId);
@@ -51,11 +45,7 @@ session_start();
 		$artistInfo = mysqli_fetch_assoc($result3);
     $artistName = $artistInfo['artist_name'];
 
-    echo $reviewRating;
-
-    echo $artistName;
-    echo $userId;
-
+    // Get reviewer's account id
     $query4 = "SELECT * FROM ACCOUNT WHERE account_id = ?";
     $stmt4 = mysqli_prepare($dbc, $query4);
     mysqli_stmt_bind_param($stmt4, "s", $userId);
@@ -64,8 +54,7 @@ session_start();
 		$reviewerInfo = mysqli_fetch_assoc($result4);
     $reviewerUserName = $reviewerInfo['username'];
 
-    echo $reviewerUserName;
-
+    // Calculate the average rating for this song
     $query5 = "SELECT ROUND(AVG(rating), 2) AS AvgRating FROM SONG_REVIEW WHERE
     song_id = ?";
     $stmt5 = mysqli_prepare($dbc, $query5);
@@ -74,8 +63,6 @@ session_start();
 		$result5 = mysqli_stmt_get_result($stmt5);
 		$averageInfo = mysqli_fetch_assoc($result5);
     $averageValue = $averageInfo['AvgRating'];
-
-    echo $averageValue;
 
 }
 
@@ -189,7 +176,7 @@ input {
 </style>
 <script>
 	function newReview() {
-	  window.location.href = "http://satoshi.cis.uncw.edu/~ab2700/Proj450/createReview.html";
+	  window.location.href = "../review/createReview.html";
 	}
 
 </script>

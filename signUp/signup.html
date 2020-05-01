@@ -7,19 +7,19 @@
   </head>
   <body>
     <script src="../header/header.js"></script>
-    <div class="flex">
+    <div class="flex" id="signUpFlex">
       <div id="signUpContainer" class="container">
         <h1>Create Your Account</h1>
         <hr id="signUpUnderline"/>
-        <!--- <form action="create_New_Reviewer.php" method="get"> -->
+        <form action="../signUp/signUp.php" method="post">
         <p id="signUp">
           <br>
           <br>
-          <input id="fName" type="text" placeholder="First Name"name="userFName" onchange="checkFName()" required>
-          <input id="lName" type="text" placeholder="Last Name" name="userLName" onchange="checkLName()" required>
+          <input id="fName" type="text" placeholder="First Name"name="fName" onchange="checkFName()" required>
+          <input id="lName" type="text" placeholder="Last Name" name="lName" onchange="checkLName()" required>
           <br>
           <br>
-          <input id="email" type="text" placeholder="Email" name="userEmail" onkeyup="noSpace('email');" onchange="checkEmail()" required>
+          <input id="email" type="text" placeholder="Email" name="email" onkeyup="noSpace('email');" onchange="checkEmail()" required>
         </p>
           <text id="invalidEmail" hidden=true>Email is invalid.</text>
           <br>
@@ -39,10 +39,10 @@
           <input id="userName" type="text" placeholder="Username" name="userName" onchange="checkUsername()" required>
           <br>
           <br>
-          <input id="password1" type="password" placeholder="Password" name="password" onkeyup="passwordChecking()" required>
+          <input id="password1" type="password" placeholder="Password" name="password1" onkeyup="passwordChecking()" required>
           <br>
           <br>
-          <input id="password2" type="password" placeholder="Verify Password" name="verifyPassword" onkeyup="passwordChecking()" required>
+          <input id="password2" type="password" placeholder="Verify Password" name="password2" onkeyup="passwordChecking()" required>
         </p>
           <text id="notVerified" hidden=true>Your password cannot have spaces.</text>
           <br>
@@ -54,7 +54,7 @@
         <br>
         <br>
         <br>
-        <!-- </form> -->
+        </form>
       </div>
     </div>
   </body>

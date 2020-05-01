@@ -1,3 +1,7 @@
+
+// Alex Bolsoy
+// Music450
+
 let restricted = true;
 let pwCheck = false;
 
@@ -5,19 +9,17 @@ let songNameCheck = false;
 let songRatingCheck = false;
 let songCommentsCheck = false;
 
-// How does it know current user
-// Edit reviews
-// What if the song has not been added to the database yet?
-// What happens if the button is clicked?
-
+// This function brings the user to a different webpage.
 function createAnotherReview() {
-  window.location.href = "http://satoshi.cis.uncw.edu/~ab2700/Proj450/createReview.html";
+  window.location.href = "../review/createReview.html";
 }
 
+// This function brings the user to a different webpage.
 function goHomeButton() {
-  window.location.href = "http://satoshi.cis.uncw.edu/~ab2700/Proj450/index.html";
+  window.location.href = "../home/home.php";
 }
 
+// This function checks the user input for song name
 function checkSongName() {
   var sName = document.getElementById("songName").value;
   sName = sName.trim();
@@ -29,8 +31,8 @@ function checkSongName() {
   checkForm();
 }
 
+// This function checks the user input for song rating
 function checkSongRating() {
-  // alert('hey');
   var sRating = document.getElementById("songRating").value;
   sRating = sRating.trim();
   if (sRating.length > 0 && sRating.length < 3) {
@@ -48,6 +50,7 @@ function checkSongRating() {
   checkForm();
 }
 
+// This function checks the user input for song rating
 function checkSongComments() {
   var sComments = document.getElementById("songComments").value;
   sComments = sComments.trim();
@@ -64,6 +67,7 @@ function noSpace(elementid) {
   document.getElementById(elementid).value = element.replace(/\s/g, '');
 }
 
+// This function checks all of the user input
 function checkForm() {
   if (songNameCheck == true && songRatingCheck == true && songCommentsCheck == true) {
     document.getElementById("createButton").style["boxShadow"] = "5px 5px 10px #333333";

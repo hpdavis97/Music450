@@ -93,20 +93,30 @@ body
 }
 
 #search {
-  position: relative;
-  width: 130px;
-  height: 30px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  font-size: 16px;
-  background-color: #F4F4EE;
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 10px 12px 20px;
+  border: 5px solid #F4F4EE !important;
+  position: relative !important;
+  width: 130px !important;
+  height: 30px !important;
+  box-sizing: border-box !important;
+  border-radius: 4px !important;
+  font-size: 16px !important;
+  background-color: #F4F4EE !important;
+  background-position: 10px 10px !important;
+  background-repeat: no-repeat !important;
+  padding: 12px 10px 12px 20px !important;
 }
 
 #loginLinkWrapper {
   position: relative;
   top: -10px;
   z-index: 2;
+}
+
+.hidden-submit {
+    border: 0 none !important;
+    height: 0 !important;
+    width: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
 }

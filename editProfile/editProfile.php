@@ -4,9 +4,10 @@
 //User will update existing account. The only data that can't be
 //modified is account_id. User is able to modify name, user name, email, date of birth
 //and password.
-require_once("../config.php");      //Makes connection to database
+require_once("../../config.php");      //Makes connection to database
 session_start();
-$sql = "SELECT * FROM ACCOUNT WHERE account_id = $_SESSION[accountNum]";
+$accountID = $_SESSION['account_id'];
+$sql = "SELECT * FROM ACCOUNT WHERE account_id = $accountID";
 $result = mysqli_query($dbc,$sql);
 $row = mysqli_fetch_array($result,MYSQLI_ASSOC); //Chose row from account table with specific account_id
 
@@ -22,8 +23,8 @@ list($year, $month, $day) = explode("-", $birth_date);
 <html>
   <title>Update_Account</title>
   <head>
-    <link rel="stylesheet" type="text/css" href="editProfile.css">
-    <script src="editProfile.js"></script>
+    <link rel="stylesheet" type="text/css" href="../editProfile/editProfile.css">
+    <script src="../editProfile/editProfile.js"></script>
   </head>
   <body>
     <script src="../header/header.js"></script>
@@ -31,7 +32,7 @@ list($year, $month, $day) = explode("-", $birth_date);
       <div id="signUpContainer" class="container">
         <h1>Edit Account</h1>
         <hr id="signUpUnderline"/>
-        <form action="updateACCOUNT.php" method="get">
+        <form action="../editProfile/updateACCOUNT.php" method="get">
         <p id="signUp">
           <br>
           <br>

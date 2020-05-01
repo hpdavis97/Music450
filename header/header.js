@@ -30,13 +30,16 @@ function removeTopNav() {
 }
 
 document.write('\
-  <link rel="stylesheet" type="text/css" href="../header/header.css">\
+  <link id="headerCSS" rel="stylesheet" type="text/css" href="../header/header.css">\
   <div class="flex-container" id="header">\
     <div id="searchWrapper">\
-      <input id="search" type="text" placeholder="Search...">\
+      <form action="../home/home.php" method="post">\
+        <input id="search" type="text" name="headerSearch" placeholder="Search...">\
+        <div class="hidden-submit"><input type="submit" id="searchSubmit" tabindex="-1"/></div>\
+      </form>\
     </div>\
     <div id="logoWrapper">\
-      <a id="logoLink" href="../index.html">\
+      <a id="logoLink" href="../home/home.php">\
         <img id="logo" border="0" alt="W3Schools" src="../header/logo.png" width="100" height="100">\
       </a>\
     </div>\
@@ -47,8 +50,8 @@ document.write('\
         <i class="fa fa-bars"></i>\
       </a>\
       <div id="myLinks">\
-        <a href="../index.html">Profile</a>\
-        <a href="../header/logOut.php">Log Out</a>\
+        <a href="../profilePage/profilePage.php">Profile</a>\
+        <a id="logout" href="../header/logOut.php">Log Out</a>\
       </div>\
       <div id="loginLinkWrapper">\
         <a id="loginLink" href="../login/login.html">LogIn/SignUp</a>\

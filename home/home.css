@@ -1,0 +1,81 @@
+body {
+  background-color: #F4F4EE;
+  text-align: center;
+}
+
+#mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#homeSearch {
+  width: 80%;
+  height: 40px;
+  border-radius: 4px;
+}
+
+#searchFilter {
+  height: 40px;
+  border-radius: 4px;
+}
+
+#reviewsListWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#reviewsTitle {
+  color: #FAE117;
+}
+
+#review {
+  width: 80%;
+  color: white;
+  border-color: #FAE117;
+  border-radius: 5px;
+  background-color: #121212;
+  text-align: center;
+  padding-left: 20px;
+}
+
+#reviewLinks {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: stretch;
+  height: 40px;
+}
+
+#reviewContainer {
+  background-color: #121212;
+  width: 90%;
+  height: 900px;
+  padding-top: 100px;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  border-radius: 20px;
+  box-shadow: 10px 10px 10px #333333;
+}
+
+#username {
+  width:20%;
+}
+
+#date {
+  width:20%;
+}
+
+#song_name{
+  width:20%;
+}
+
+#rating {
+  width:20%;
+}
+
+#artist {
+  width:20%;
+}

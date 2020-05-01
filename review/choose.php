@@ -1,41 +1,31 @@
 <?php
-session_start();
- ?>
-<?php
-/*This code assumes user input is valid and correct only for demo purposes - it does NOT validate form data.*/
-	if(true) {
-		// session_start();
-		$_SESSION['review_id'] = 60008;
-		$_SESSION['account_id'] = 40001;
-		$accountId = $_SESSION['account_id'];
-		$reviewId = $_SESSION['review_id'];
-		require_once('../../mysqli_config.php'); //adjust the relative path as necessary to find your config file
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+  session_start();
+  require_once('../../config.php');
 
-    $query = "SELECT * FROM SONG_REVIEW WHERE review_id = ?";
-    $stmt = mysqli_prepare($dbc, $query);
-    mysqli_stmt_bind_param($stmt, "s", $reviewId);
-    mysqli_stmt_execute($stmt);
+  $temp = 0;
+  $_SESSION['review_id'] = $_POST['reviewID'];
+  $reviewId = $_SESSION['review_id'];
 
-		$result = mysqli_stmt_get_result($stmt);
-		$reviewInfo = mysqli_fetch_assoc($result);
-    $userId = $reviewInfo['account_id'];
+  $query = "SELECT * FROM SONG_REVIEW WHERE review_id = ?";
+  $stmt = mysqli_prepare($dbc, $query);
+  mysqli_stmt_bind_param($stmt, "s", $reviewId);
+  mysqli_stmt_execute($stmt);
 
-		if ($accountId === $userId) {
-			$temp = 1;
-		}
-		else {
-			$temp = 0;
-		}
+	$result = mysqli_stmt_get_result($stmt);
+	$reviewInfo = mysqli_fetch_assoc($result);
+  $userId = $reviewInfo['account_id'];
+  //
+  if(isset($_SESSION['account_id']) && !empty($_SESSION['account_id'])) {
+	  $accountId = (int)$_SESSION['account_id'];
+    if ($accountId === $userId) {
+  		header("Location: ../review/viewOwnReview.php");
+  	} else {
+      header("Location: ../review/viewReview.php");
+    }
+  } else {
+    header("Location: ../review/viewReview.php");
   }
-
-  // I CAN GET IT TO DELETE FROM HERE, BUT NOT BY PRESSING THE DELETE BUTTON
-
 ?>
-
-<script>
-if (<?php echo $temp;?>) {
-	window.location.href = "viewOwnReview.php";
-} else {
-	window.location.href = "viewReview.php";
-}
-</script>

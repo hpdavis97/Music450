@@ -3,5 +3,5 @@
 ?>
 <script>
   sessionStorage.clear();
-  window.location.href = "../index.html";
+  window.location.href = "../home/home.php";
 </script>

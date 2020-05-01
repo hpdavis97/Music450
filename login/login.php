@@ -16,14 +16,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   // If result matched $myusername and $mypassword, table row must be 1 row
   if($count == 1) {
-     $_SESSION['account_id'] = $result;
+     $_SESSION['account_id'] = $row['account_id'];
      $_SESSION['username'] = $myusername;
-  }else {
+  } else {
      $error = "Your Username or Password is invalid";
    }
  }
 ?>
 <script>
   sessionStorage.setItem('username', "<?php if($myusername){echo $myusername;} ?>");
-  window.location.href = "../index.html";
+  window.location.href = "../home/home.php";
 </script>
